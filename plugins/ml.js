@@ -38,6 +38,7 @@ exports.hook_queue = function(next, connection) {
 	    	    break;
 	    	case OK:
 	    	    plugin.loginfo("mail sent");
+		    next(OK);
 	    	    break;
 	    	default:
 	    	    plugin.logerror("Unrecognised return code from sending email: " + msg);
