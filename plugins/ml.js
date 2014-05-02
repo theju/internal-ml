@@ -45,5 +45,7 @@ exports.hook_queue = function(next, connection) {
 	    	}
 	    });
 	});
+    } else {
+	next(DENY, ["Only " + domain + " users are allowed to send a mail to this list"]);
     }
 }
